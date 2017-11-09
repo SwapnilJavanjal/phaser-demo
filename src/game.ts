@@ -6,9 +6,11 @@ import { Menu } from './states/menu';
 import { Level1 } from './states/level1';
 // Import additional states here
 
-export class MyGame extends Phaser.Game {
-    constructor() {
-        super(800, 600); //makes new game at 800x600 resolution
+export class MyGame extends Phaser.Game
+{
+    constructor()
+    {
+        super(450, 600); //makes new game at specified resolution
 
         this.state.add('Boot', Boot);
         this.state.add('Loading', Loading);

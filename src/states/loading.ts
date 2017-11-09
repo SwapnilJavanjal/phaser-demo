@@ -1,9 +1,10 @@
-export class Loading extends Phaser.State {
-
+export class Loading extends Phaser.State
+{
     preloadBar: Phaser.Sprite;
     loadingText: Phaser.Text;
 
-    preload() {
+    preload()
+    {
         let fontStyle = {
             font: '18px Walter Turncoat',
             fill: '#7edcfc'
@@ -28,16 +29,19 @@ export class Loading extends Phaser.State {
         this.loadingText.anchor.setTo(0.5);
 
         /*---LOAD GAME ASSETS---*/
-        this.load.image('bg','assets/bg.png');
+        this.load.spritesheet('cat','assets/guy/guyspritesheet.png',64,64);
 
+        this.load.image('bg','assets/bg.png');
+        this.load.image('sky','assets/sky.jpg');
         this.load.image('pause','assets/UI/pause.png');
         this.load.image('panel','assets/UI/panel.png');
         this.load.image('button','assets/UI/button.png');
 
-        this.load.spritesheet('guy','assets/guy/guyspritesheet.png',64,64);
+        this.load.image('platform','assets/platform.png');
     }
 
-    create() {
+    create()
+    {
         this.game.state.start('Menu');
     }
 }
